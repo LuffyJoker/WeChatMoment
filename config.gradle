@@ -1,0 +1,83 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+ext {
+
+    // main
+    appcompat = '1.2.0'
+    core_ktx = '1.3.2'
+    material = '1.3.0'
+    constraintlayout = '2.0.4'
+    kotlin_version = '1.3.72'
+
+    // test
+    junit = '4.+'
+    ext_junit = '1.1.2'
+    espresso_core = '3.3.0'
+
+    // App dependencies
+    swiperefreshlayout = '1.0.0'
+
+    // network
+    retrofit = '2.3.0'
+    rxandroid = '2.0.1'
+    rxjava = '2.2.21'
+    logging_interceptor = '3.5.0'
+    gson = '2.8.2'
+
+    // other
+    recyclerview_adapter = '3.0.4'
+    dagger = '2.33'
+    utilcode = '1.19.0'
+    greendao = '3.2.2'
+    rxpermissions = '0.10.2'
+    glide = '3.7.0'
+    recyclerview = '1.0.0'
+
+
+    android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.2",
+            minSdkVersion    : 16,
+            targetSdkVersion : 30
+    ]
+
+    main = [
+            // 主模块
+            "kotlin_stdlib"   : "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlin_version",
+            "core_ktx"        : "androidx.core:core-ktx:$rootProject.ext.core_ktx",
+            "appcompat"       : "androidx.appcompat:appcompat:$rootProject.ext.appcompat",
+            "material"        : "com.google.android.material:material:$rootProject.ext.material",
+            "constraintlayout": "androidx.constraintlayout:constraintlayout:$rootProject.ext.constraintlayout"
+    ]
+
+    test = [
+            "junit"        : "junit:junit:$rootProject.ext.junit",
+            "ext_junit"    : "androidx.test.ext:junit:$rootProject.ext.ext_junit",
+            "espresso_core": "androidx.test.espresso:espresso-core:$rootProject.ext.espresso_core",
+    ]
+
+    dependencies = [
+            "swiperefreshlayout"     : "androidx.swiperefreshlayout:swiperefreshlayout:$rootProject.ext.swiperefreshlayout",
+
+            "gson"                   : "com.google.code.gson:gson:$rootProject.ext.gson",
+            "retrofit"               : "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit",
+            "converter_gson"         : "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit",
+            "adapter_rxjava2"        : "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofit",
+            "rxjava"                 : "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava",
+            "rxandroid"              : "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroid",
+            "logging_interceptor"    : "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.logging_interceptor",
+
+            "recyclerview_adapter"   : "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.ext.recyclerview_adapter",
+            "recyclerview"           : "androidx.recyclerview:recyclerview:$rootProject.ext.recyclerview",
+            "dagger"                 : "com.google.dagger:dagger:$rootProject.ext.dagger",
+            "dagger_android_support" : "com.google.dagger:dagger-android-support:$rootProject.ext.dagger",
+            "dagger_compiler"        : "com.google.dagger:dagger-compiler:$rootProject.ext.dagger",
+            "dagger_android_processo": "com.google.dagger:dagger-android-processor:$rootProject.ext.dagger",
+            "utilcode"               : "com.blankj:utilcode:$rootProject.ext.utilcode",
+            "greendao"               : "org.greenrobot:greendao:$rootProject.ext.greendao",
+            "rxpermissions"          : "com.github.tbruyelle:rxpermissions:$rootProject.ext.rxpermissions",
+            "glide"                  : "com.github.bumptech.glide:glide:$rootProject.ext.glide"
+    ]
+}
+
+

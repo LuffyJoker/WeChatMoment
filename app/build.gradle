@@ -1,0 +1,86 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.peng.wechatmoment"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+
+    implementation rootProject.ext.main.kotlin_stdlib
+    implementation rootProject.ext.main.core_ktx
+    implementation rootProject.ext.main.appcompat
+    implementation rootProject.ext.main.material
+    implementation rootProject.ext.main.constraintlayout
+
+    testImplementation rootProject.test.junit
+    androidTestImplementation rootProject.test.ext_junit
+    androidTestImplementation rootProject.test.espresso_core
+
+    implementation rootProject.ext.dependencies.swiperefreshlayout
+
+    // rx
+    implementation rootProject.ext.dependencies.rxjava
+    implementation rootProject.ext.dependencies.rxandroid
+
+    // network
+    implementation rootProject.ext.dependencies.retrofit
+    implementation rootProject.ext.dependencies.adapter_rxjava2
+    implementation rootProject.ext.dependencies.converter_gson
+    implementation rootProject.ext.dependencies.gson
+    implementation rootProject.ext.dependencies.rxjava
+    implementation rootProject.ext.dependencies.rxandroid
+    implementation rootProject.ext.dependencies.logging_interceptor
+
+    // RecyclerView
+    implementation rootProject.ext.dependencies.recyclerview_adapter
+    implementation rootProject.ext.dependencies.recyclerview
+
+    // dependency injection
+    implementation rootProject.ext.dependencies.dagger
+    implementation rootProject.ext.dependencies.dagger_android_support
+    annotationProcessor rootProject.ext.dependencies.dagger_compiler
+    annotationProcessor rootProject.ext.dependencies.dagger_android_processo
+
+    // utils
+    implementation rootProject.ext.dependencies.utilcode
+
+    implementation rootProject.ext.dependencies.glide
+
+    // DAO 用于缓存数据
+    implementation rootProject.ext.dependencies.greendao
+
+    implementation rootProject.ext.dependencies.rxpermissions
+}
